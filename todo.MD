@@ -51,4 +51,21 @@
 
 ---
 
+### Bölüm 2
+
+---
+
+- Htaccess yönlendirmesi
+- Router yapısı
+- View yapısı
+  - home.php testing (view)
+- Controller yapısı
+  - home.php testing (controller)
+- Class'lar
+  - db.class.php
+  - helper.class.php
+- Git commit ekleme ve push etmek
+
 > ### Bir dahaki videoda görüşmek üzere, hoşçakalın :)
+
+> Coder: _Ertuğrul Sencer_
