@@ -2,8 +2,7 @@
 
 class Route {
   function __construct() {
-    $url = $_GET['url'];
-    echo $url;
+    $url = isset($_GET['url']) ? trim($_GET['url'], '/') : '/';
     if ($this->controller($url)) {
       require_once $this->controller($url);
       require_once $this->view($url);

@@ -66,6 +66,23 @@
   - helper.class.php
 - Git commit ekleme ve push etmek
 
+---
+
+### Bölüm 3
+
+---
+
+- .htaccess düzenleme
+- Config oluşturma
+- `asset` helper fonksiyonu
+- Router birkaç düzenleme
+- Ana Sayfa Tasarımı (home.php)
+  - Header tasarımı
+  - Footer tasarımı
+  - FontAwesome CDN kullanmak
+  - Sass ve Scss kullanımı
+- Loader Yapımı
+
 > ### Bir dahaki videoda görüşmek üzere, hoşçakalın :)
 
 > Coder: _Ertuğrul Sencer_
