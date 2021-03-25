@@ -1,7 +1,7 @@
-.container {
-  width: 100%;
-  max-width: 1080px;
-  margin: 0 auto;
+.btn-warning,
+.btn-outline-warning {
+  border: 1px solid $light !important;
+  color: $light !important;
 }
 header.header {
   position: fixed;
@@ -17,7 +17,41 @@ header.header {
     justify-content: space-between;
     a.logo {
       text-decoration: none;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
+      color: $light;
+      text-transform: uppercase;
+      &:hover {
+        perspective: 100px;
+        transform: scaleY(1.35);
+      }
+    }
+    ul.list {
+      margin-bottom: 0 !important;
+      list-style-type: none;
+      height: 100%;
+      li {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        a {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          color: $light;
+          font-weight: 500;
+          text-decoration: wavy line-through transparent;
+          &:hover {
+            text-decoration: wavy line-through var(--bs-primary);
+          }
+        }
+      }
+    }
+    .btn {
+      border-width: 2px;
+      font-weight: 500;
     }
   }
 }
