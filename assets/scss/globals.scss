@@ -3,12 +3,26 @@
   border: 1px solid $light !important;
   color: $light !important;
 }
+.btn-primary {
+  background: $primary;
+  border-color: $primary;
+  &:hover,
+  &:focus,
+  &:active {
+    background: lighten($primary, 4);
+    border-color: $primary;
+  }
+  &:focus,
+  &:active {
+    box-shadow: 0 0 0 0.25rem rgba($primary, 0.4) !important;
+  }
+}
 header.header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 74px;
+  height: 68px;
   background: $primary;
   box-shadow: 0 0 14px -8px $primary;
   .container {
@@ -49,10 +63,23 @@ header.header {
         }
       }
     }
-    .btn {
-      border-width: 2px;
-      font-weight: 500;
+    .login-register {
+      .btn {
+        &.btn-light {
+          color: $primary;
+        }
+        &:hover {
+          color: $primary;
+        }
+        border-width: 2px;
+        font-weight: 500;
+      }
     }
+  }
+}
+footer.footer {
+  p {
+    margin-bottom: 0 !important;
   }
 }
 #Page404 {
@@ -111,4 +138,7 @@ header.header {
       transition: margin 300ms ease-in-out;
     }
   }
+}
+.bg-primary {
+  background: $primary !important;
 }

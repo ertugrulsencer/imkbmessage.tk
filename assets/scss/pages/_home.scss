@@ -1,0 +1,65 @@
+main#pageHome {
+  section {
+    h3 {
+      margin-bottom: 0 !important;
+    }
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .container {
+      padding: 1.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .texts {
+        width: 600px;
+        span {
+          color: darken($primary, 2);
+        }
+        h3 {
+          color: $textColor;
+          font-weight: 700;
+          font-size: 2rem;
+          line-height: 125%;
+          margin-bottom: 1rem !important;
+        }
+        p {
+          color: $textColor;
+          font-size: 1.15rem;
+        }
+        .btn {
+          font-weight: 500;
+        }
+      }
+    }
+    /* Intro Section */
+    &#intro {
+      background: $light;
+    }
+    &#section2 {
+      background: darken($light, 4);
+    }
+    &#section3 {
+      background: $light;
+    }
+    &#section4 {
+      background: darken($light, 4);
+      .texts {
+        h3 {
+          text-align: center;
+          margin-bottom: 2.5rem !important;
+        }
+        .techs {
+          .tech {
+            width: 80px;
+            height: 80px;
+            border-radius: 0.35rem;
+            border: 3px dashed $primary;
+            color: $textColor;
+          }
+        }
+      }
+    }
+  }
+}
