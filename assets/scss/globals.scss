@@ -55,21 +55,36 @@ header.header {
       list-style-type: none;
       height: 100%;
       li {
-        height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
         a {
-          height: 100%;
+          padding: 0.35rem;
           display: flex;
           align-items: center;
           justify-content: center;
           text-decoration: none;
           color: $light;
           font-weight: 500;
-          text-decoration: wavy line-through transparent;
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            background: rgba($light, 0.25);
+            border-radius: 0.25rem;
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform 350ms ease-in-out;
+          }
           &:hover {
-            text-decoration: wavy line-through var(--bs-primary);
+            &::before {
+              transform: scaleX(100%);
+            }
           }
         }
       }
