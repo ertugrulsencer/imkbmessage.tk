@@ -153,7 +153,7 @@ footer.footer {
   background: $primary;
   color: $light;
   z-index: 9999;
-  transition: all 350ms ease-in-out;
+  transition: all 450ms ease-in-out;
   &.hidden {
     opacity: 0;
     visibility: hidden;
