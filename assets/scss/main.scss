@@ -25,6 +25,7 @@ body {
   color: $light;
 }
 /* Includes */
+@import "./animations";
 @import "./globals";
 /* Pages */
 @import "./pages/home";

@@ -142,3 +142,31 @@ footer.footer {
 .bg-primary {
   background: $primary !important;
 }
+
+/* Loader */
+#loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: $primary;
+  color: $light;
+  z-index: 9999;
+  transition: all 350ms ease-in-out;
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.2);
+  }
+  strong {
+    font-size: 2.25rem;
+    letter-spacing: 2px;
+    color: transparent;
+    -webkit-text-stroke: 0.1rem $light;
+  }
+  i {
+    color: $light;
+    animation: loader-spinner 1.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  }
+}
