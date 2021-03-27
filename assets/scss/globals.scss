@@ -1,7 +1,18 @@
+a {
+  color: darken($primary, 4);
+  &:hover {
+    color: lighten($primary, 5);
+  }
+}
 .btn-warning,
 .btn-outline-warning {
   border: 1px solid $light !important;
   color: $light !important;
+}
+.form-control {
+  &:focus {
+    box-shadow: 0 0 0 0.25rem rgba($primary, 0.4) !important;
+  }
 }
 .btn-primary {
   background: $primary;
@@ -78,6 +89,7 @@ header.header {
   }
 }
 footer.footer {
+  height: 72px;
   p {
     margin-bottom: 0 !important;
   }

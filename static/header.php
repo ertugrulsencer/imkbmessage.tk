@@ -5,16 +5,16 @@
     </a>
     <ul class="list d-flex align-items-center justify-content-between">
       <li class="me-4">
-        <a href="#intro">Tanıtım</a>
+        <a href="<?=Helper::url()?>#intro">Tanıtım</a>
       </li>
       <li class="me-4">
-        <a href="#section2">Şifreli Mesajlaşma</a>
+        <a href="<?=Helper::url()?>#section2">Şifreli Mesajlaşma</a>
       </li>
       <li class="me-4">
-        <a href="#section3">Gelişmiş Güvenlik</a>
+        <a href="<?=Helper::url()?>#section3">Gelişmiş Güvenlik</a>
       </li>
       <li>
-        <a href="#section4">Teknolojiler</a>
+        <a href="<?=Helper::url()?>#section4">Teknolojiler</a>
       </li>
     </ul>
     <div class="login-register">
