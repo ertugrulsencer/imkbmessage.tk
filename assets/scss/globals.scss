@@ -93,6 +93,10 @@ header.header {
       .btn {
         &.btn-light {
           color: $primary;
+          &:hover {
+            background: $primary;
+            color: $light;
+          }
         }
         &:hover {
           color: $primary;
