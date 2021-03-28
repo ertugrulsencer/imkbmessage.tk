@@ -2,8 +2,9 @@
 
 class DB extends PDO {
   function __construct() {
+    global $config;
     try {
-      parent::__construct('mysql:host=localhost;dbname=imkb_messages;charset=utf8', 'root', '');
+      parent::__construct('mysql:host=' . $config['MYSQL']['HOST'] . ';dbname=' . $config['MYSQL']['DB_NAME'] . ';charset=utf8', $config['MYSQL']['USER'], $config['MYSQL']['PASS']);
     } catch (PDOException $e) {
       die('Veritabanı hatası: ' . $e->getMessage());
     }
