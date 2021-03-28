@@ -35,6 +35,7 @@ header.header {
   right: 0;
   height: 68px;
   background: $primary;
+  z-index: 10;
   box-shadow: 0 0 14px -8px $primary;
   .container {
     display: flex;
@@ -199,5 +200,33 @@ footer.footer {
   i {
     color: $light;
     animation: loader-spinner 1.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  }
+}
+.mobile-block {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background: $light;
+  color: $primary;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  font-size: 1.5rem;
+  text-align: center;
+  z-index: 1000;
+  .logo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 62px;
+    font-weight: 800;
+    background: $primary;
+    color: transparent;
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+    -webkit-text-stroke: 0.1rem $light;
   }
 }

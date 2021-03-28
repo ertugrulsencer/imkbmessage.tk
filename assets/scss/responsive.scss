@@ -1,0 +1,9 @@
+@media screen and (max-width: 420px) {
+  html,
+  body {
+    overflow: hidden;
+  }
+  .mobile-block {
+    display: flex !important;
+  }
+}
