@@ -20,6 +20,7 @@
       <section class="form mx-auto">
         <h4>Giriş Yap</h4>
         <?=Helper::getResponseAlert('login')?>
+        <?=Helper::getResponseAlert('register')?>
         <form action="<?=Helper::url('login')?>" method="post">
           <input value="<?=$_POST['user_pass'] ?? null?>" required class="form-control my-3" name="user_name" type="text" placeholder="Kullanıcı Adı"/>
           <input value="<?=$_POST['user_pass'] ?? null?>" required class="form-control my-3" name="user_pass" type="password" placeholder="Şifre"/>

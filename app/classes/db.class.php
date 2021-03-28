@@ -13,14 +13,40 @@ class DB extends PDO {
     $sql = 'SELECT * FROM site_settings WHERE setting_key = "' . $name . '"';
     return parent::query($sql)->fetch(parent::FETCH_ASSOC)['setting_value'];
   }
-  public function checkUser($user_name, $user_pass) {
-    $sql = 'SELECT * FROM users WHERE user_name = ? AND user_password = ?';
-    $query = parent::prepare($sql);
-    $result = $query->execute([
-      $user_name,
-      $user_pass,
-    ]);
+  public function checkUser($user_name, $user_pass = null) {
+    if ($user_pass != null) {
+      $sql = 'SELECT * FROM users WHERE user_name = ? AND user_password = ?';
+      $query = parent::prepare($sql);
+      $result = $query->execute([
+        $user_name,
+        $user_pass,
+      ]);
+    } else {
+      $sql = 'SELECT * FROM users WHERE user_name = ?';
+      $query = parent::prepare($sql);
+      $result = $query->execute([
+        $user_name,
+      ]);
+    }
     return !$result ? false : $query->rowCount();
+  }
+  public function registerUser($data) {
+    if ($this->checkUser($data[0])) {
+      return '<div class="alert alert-danger py-3">Bu kullanıcı adı kullanılıyor, lütfen başka bir kullanıcı adı girin.</div>';
+    }
+    $sql = 'INSERT INTO users SET
+            user_name = ?,
+            user_first_name = ?,
+            user_last_name = ?,
+            user_email = ?,
+            user_password = ?,
+            user_date = CURRENT_TIMESTAMP';
+    $query = parent::prepare($sql);
+    if ($query->execute($data)) {
+      return true;
+    } else {
+      return '<div class="alert alert-danger">Bir sorun oluştu, lütfen daha sonra tekrar deneyiniz.</div>';
+    }
   }
   public function getUserInfo($user_name) {
     /* ! Şuan Boş */

@@ -18,9 +18,11 @@
         <img src="<?=Helper::asset('images/svg/register.svg')?>" alt="register" width="560" />
       </section>
       <section class="form mx-auto">
-        <h4>Kayıt Ol</h4>
+        <h4 class="mb-3">Kayıt Ol</h4>
+        <?=Helper::getResponseAlert('register')?>
         <form action="<?=Helper::url('register')?>" method="post">
-          <input required class="form-control my-3" name="full_name" type="text" placeholder="Ad Soyad"/>
+          <input required class="form-control my-3" name="frist_name" type="text" placeholder="Ad"/>
+          <input required class="form-control my-3" name="last_name" type="text" placeholder="Soyad"/>
           <input required class="form-control my-3" name="user_name" type="text" placeholder="Kullanıcı Adı"/>
           <input required class="form-control my-3" name="e_mail" type="email" placeholder="E Posta"/>
           <input required class="form-control my-3" name="user_pass" type="password" placeholder="Şifre"/>

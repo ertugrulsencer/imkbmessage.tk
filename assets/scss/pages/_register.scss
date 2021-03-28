@@ -7,6 +7,7 @@ main#pageRegister {
     justify-content: space-between;
     section {
       &.form {
+        max-width: 350px;
         p {
           font-weight: 500;
           color: rgba($textColor, 0.75);
