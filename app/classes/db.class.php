@@ -13,4 +13,26 @@ class DB extends PDO {
     $sql = 'SELECT * FROM site_settings WHERE setting_key = "' . $name . '"';
     return parent::query($sql)->fetch(parent::FETCH_ASSOC)['setting_value'];
   }
+  public function checkUser($user_name, $user_pass) {
+    $sql = 'SELECT * FROM users WHERE user_name = ? AND user_password = ?';
+    $query = parent::prepare($sql);
+    $result = $query->execute([
+      $user_name,
+      $user_pass,
+    ]);
+    return !$result ? false : $query->rowCount();
+  }
+  public function getUserInfo($user_name) {
+    /* ! Şuan Boş */
+  }
+  public function getUserId($user_name) {
+    $sql = 'SELECT * FROM users WHERE user_name = ?';
+    $query = parent::prepare($sql);
+    $result = $query->execute([$user_name]);
+    if ($result) {
+      return $query->fetch(parent::FETCH_ASSOC)['user_id'];
+    } else {
+      return false;
+    }
+  }
 }

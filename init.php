@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once './config.php';
 require_once './app/classes/db.class.php';
 require_once './app/classes/helper.class.php';
