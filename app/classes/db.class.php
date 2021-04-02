@@ -43,7 +43,7 @@ class DB extends PDO {
             user_date = CURRENT_TIMESTAMP';
     $query = parent::prepare($sql);
     if ($query->execute($data)) {
-      return true;
+      return false;
     } else {
       return '<div class="alert alert-danger">Bir sorun oluştu, lütfen daha sonra tekrar deneyiniz.</div>';
     }

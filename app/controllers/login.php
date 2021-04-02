@@ -12,7 +12,7 @@ if (isset($_POST['login'])) {
     header('Location: ' . Helper::url('login'));
     exit;
   } else {
-    if ($db->checkUser(Helper::post('user_name'), Helper::post('user_pass'))) {
+    if ($db->checkUser(Helper::post('user_name'), md5(Helper::post('user_pass')))) {
       Helper::setResponseAlert('login', '<div class="alert alert-success my-3">Başarı ile giriş yaptınız.</div>');
       $_SESSION['user'] = $db->getUserId(Helper::post('user_name'));
       header('Location: ' . Helper::url('profile'));
