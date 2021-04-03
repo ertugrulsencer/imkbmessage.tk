@@ -1,0 +1,95 @@
+main#pageMessage {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  overflow: hidden;
+  height: calc(100vh - 68px - 72px);
+  section {
+    height: inherit;
+    &.users {
+      border-right: 1px solid $secondary;
+      flex-grow: 340px;
+      .search {
+        margin: 0.75rem;
+        position: relative;
+        input {
+          padding: 0 1rem;
+          height: 46px;
+          width: max-content;
+        }
+        .icon {
+          pointer-events: none;
+          right: 1rem;
+          top: 50%;
+          transform: translateY(-50%);
+          position: absolute;
+          color: rgba($primary, 0.85);
+        }
+      }
+      ul {
+        height: calc(100% - (46px + 1.5rem));
+        width: 100%;
+        padding-left: 0 !important;
+        list-style: none;
+        border-top: 1px solid $secondary;
+        overflow-y: auto;
+        li {
+          border-bottom: 1px solid $secondary;
+          a {
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-decoration: none;
+            font-weight: 500;
+            color: darken($secondary, 45);
+            i {
+              font-size: 1.15rem;
+              color: $primary;
+            }
+          }
+        }
+      }
+    }
+    &.messages {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      flex-direction: column;
+      flex-grow: 1;
+      background-size: 150vh;
+      margin-top: auto;
+      ul.messages {
+        height: 100%;
+        overflow-y: auto;
+        padding-top: 1.5rem;
+        display: flex;
+        align-items: stretch;
+        justify-content: flex-start;
+        flex-direction: column;
+        .message {
+          width: max-content;
+          font-weight: 500;
+          font-size: 0.95rem;
+          background: $primary;
+          padding: 0.5rem 0.75rem;
+          border-radius: 0.35rem;
+          margin: 0.5rem;
+          color: $light;
+          &.your {
+            background: $light;
+            color: $primary;
+            margin-left: auto;
+          }
+        }
+      }
+      .message-form {
+        padding: 0.75rem;
+        button {
+          width: 38px;
+          height: 38px;
+        }
+      }
+    }
+  }
+}

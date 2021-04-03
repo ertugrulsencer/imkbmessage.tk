@@ -31,4 +31,7 @@ class Helper {
       return null;
     }
   }
+  public static function isLogin(): bool {
+    return isset($_SESSION['user']);
+  }
 }

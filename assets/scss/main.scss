@@ -11,6 +11,7 @@
 }
 $primary: #f4bb44;
 $light: #f8f8f8;
+$secondary: #dcdcdc;
 $textColor: #282828;
 html,
 body {
@@ -32,3 +33,4 @@ body {
 @import "./pages/home";
 @import "./pages/login";
 @import "./pages/register";
+@import "./pages/message";

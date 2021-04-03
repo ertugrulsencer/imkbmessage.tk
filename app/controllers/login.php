@@ -15,7 +15,7 @@ if (isset($_POST['login'])) {
     if ($db->checkUser(Helper::post('user_name'), md5(Helper::post('user_pass')))) {
       Helper::setResponseAlert('login', '<div class="alert alert-success my-3">Başarı ile giriş yaptınız.</div>');
       $_SESSION['user'] = $db->getUserId(Helper::post('user_name'));
-      header('Location: ' . Helper::url('profile'));
+      header('Location: ' . Helper::url('message'));
     } else {
       Helper::setResponseAlert('login', '<div class="alert alert-danger my-3">Kullanıcı adınız veya şifreniz hatalı, lütfen kontrol edip tekrar deneyiniz.</div>');
       header('Location: ' . Helper::url('login'));
