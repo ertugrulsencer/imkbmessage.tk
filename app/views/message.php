@@ -19,17 +19,34 @@
         <i class="fas fa-search icon"></i>
       </div>
       <ul>
-        <?php for ($i = 0; $i < 20; $i++): ?>
+        <?php foreach ($users as $user): ?>
           <li>
-            <a href="#!">
+            <a href="javascript:void(0);">
               <i class="fas fa-user-circle me-3"></i>
-              <span>Ertuğrul Sencer</span>
+              <span><?=$user['user_name']?></span>
             </a>
           </li>
-        <?php endfor;?>
+        <?php endforeach;?>
       </ul>
+      <div class="info">
+        Tasarım ve animasyon: &nbsp; <strong>Ertuğrul Sencer</strong>
+      </div>
     </section>
     <section style="background-image: url('<?=Helper::asset('images/message_background.png')?>');" class="messages">
+      <header class="user">
+        <div class="profile d-flex align-items-center justify-content-start">
+          <i class="fas fa-2x fa-user-circle me-3"></i>
+          <div class="d-flex align-items-between justify-content-between flex-column">
+            <strong class="name">Ertuğrul Sencer</strong>
+            <span class="online">Çevrimiçi</span>
+          </div>
+        </div>
+        <div class="buttons">
+          <a href="javascript:void(0);" class="btn btn-light">
+            <i class="fas fa-bars"></i>
+          </a>
+        </div>
+      </header>
       <ul class="messages">
         <div class="message your">
           Mesaj içeriği alanı falan filan

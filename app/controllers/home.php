@@ -1,4 +1,8 @@
 <?php
+if (Helper::isLogin()) {
+  header('Location: ' . Helper::url('message'));
+  exit;
+}
 $db = new DB;
 $settings = [
   'site_title' => $db->getSettings('site_title'),

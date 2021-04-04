@@ -37,7 +37,8 @@ header.header {
   background: $primary;
   z-index: 10;
   box-shadow: 0 0 14px -8px $primary;
-  .container {
+  .container,
+  .container-fluid {
     display: flex;
     align-items: center;
     justify-content: space-between;

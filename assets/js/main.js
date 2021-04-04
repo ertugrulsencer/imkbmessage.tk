@@ -2,7 +2,7 @@ const els = {
   loader: document.querySelector("#loader"),
 };
 addEventListener("load", () => {
-  setTimeout(() => els.loader.classList.add("hidden"), 1000);
+  els.loader.classList.add("hidden");
 });
 /* Warning Icon */
 document.querySelectorAll(".alert-warning").forEach((alert) => {

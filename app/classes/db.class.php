@@ -61,4 +61,22 @@ class DB extends PDO {
       return false;
     }
   }
+  public function getUsers($limit = 10) {
+    $sql = 'SELECT * FROM users LIMIT 0, :limit';
+    $query = parent::prepare($sql);
+    $query->bindParam(':limit', $limit, parent::PARAM_INT);
+    if ($query) {
+      if ($query->execute()) {
+        if ($query->rowCount()) {
+          return $query->fetchAll(parent::FETCH_ASSOC);
+        } else {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
+  }
 }

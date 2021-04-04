@@ -1,5 +1,5 @@
 <header class="header">
-  <div class="container d-flex align-items-center h-100 justify-content-between">
+  <div class="<?=Helper::isLogin() ? 'container-fluid' : 'container'?> d-flex align-items-center h-100 justify-content-between">
     <a href="<?=Helper::url()?>" class="logo">
       <?=$settings['site_title']?>
     </a>
