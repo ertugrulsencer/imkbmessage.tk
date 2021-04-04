@@ -44,6 +44,9 @@
       <a href="<?=Helper::url('register')?>" class="btn btn-sm btn-light">Kayıt Ol</a>
     </div>
     <?php else: ?>
+    <div class="welcome-text">
+      Hoşgeldiniz, <span><?=$db->getUserInfo($_SESSION['user'])["user_name"]?></span>
+    </div>
     <div class="logout">
       <a href="<?=Helper::url('logout')?>" class="btn btn-sm btn-outline-danger">Çıkış Yap</a>
     </div>

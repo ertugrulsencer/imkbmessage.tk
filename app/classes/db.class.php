@@ -48,8 +48,15 @@ class DB extends PDO {
       return '<div class="alert alert-danger">Bir sorun oluştu, lütfen daha sonra tekrar deneyiniz.</div>';
     }
   }
-  public function getUserInfo($user_name) {
-    /* ! Şuan Boş */
+  public function getUserInfo($user_id) {
+    $sql = 'SELECT * FROM users WHERE user_id = ?';
+    $query = parent::prepare($sql);
+    $result = $query->execute([$user_id]);
+    if ($result) {
+      return $query->fetch(parent::FETCH_ASSOC);
+    } else {
+      return false;
+    }
   }
   public function getUserId($user_name) {
     $sql = 'SELECT * FROM users WHERE user_name = ?';
@@ -61,9 +68,15 @@ class DB extends PDO {
       return false;
     }
   }
-  public function getUsers($limit = 10) {
-    $sql = 'SELECT * FROM users LIMIT 0, :limit';
-    $query = parent::prepare($sql);
+  public function getUsers($limit = 10, $is_this = false) {
+    if ($is_this) {
+      $sql = 'SELECT * FROM users WHERE user_id != :id LIMIT 0, :limit';
+      $query = parent::prepare($sql);
+      $query->bindParam(':id', $_SESSION['user'], parent::PARAM_INT);
+    } else {
+      $sql = 'SELECT * FROM users LIMIT 0, :limit';
+      $query = parent::prepare($sql);
+    }
     $query->bindParam(':limit', $limit, parent::PARAM_INT);
     if ($query) {
       if ($query->execute()) {
@@ -77,6 +90,33 @@ class DB extends PDO {
       }
     } else {
       return false;
+    }
+  }
+  public function getMessages($message_to, $user_name = null) {
+    if (!$user_name) {
+      $user_name = $this->getUserInfo($_SESSION['user'])["user_name"];
+    }
+    $sql = 'SELECT * FROM messages
+      WHERE (message_from = ? AND message_to = ?)
+      OR (message_from = ? AND message_to = ?)';
+    $query = parent::prepare($sql);
+    if ($query->execute([
+      $user_name,
+      $message_to,
+      $message_to,
+      $user_name,
+    ])) {
+      if ($query->rowCount()) {
+        return $query->fetchAll(parent::FETCH_ASSOC);
+      } else {
+        return [
+          'warning' => 'Bu kullanıcı ile henüz mesaj geçmişiniz yok.',
+        ];
+      }
+    } else {
+      return [
+        'error' => 'Bir sorun oluştu, lütfen daha sonra tekrar deneyiniz.',
+      ];
     }
   }
 }

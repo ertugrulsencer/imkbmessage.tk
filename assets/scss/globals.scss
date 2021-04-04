@@ -53,6 +53,7 @@ header.header {
       }
     }
     ul.list {
+      margin: auto !important;
       margin-bottom: 0 !important;
       list-style-type: none;
       height: 100%;
@@ -111,6 +112,14 @@ header.header {
       .btn {
         border-width: 2px;
         font-weight: 500;
+      }
+    }
+    .welcome-text {
+      color: $light;
+      margin-right: 1rem;
+      span {
+        font-weight: 500;
+        font-style: italic;
       }
     }
   }

@@ -32,6 +32,6 @@
     </div>
   </main>
   <?php include_once 'static/footer.php'?>
-  <script src="<?=Helper::asset('js/main.js')?>"></script>
+  <script type="module" src="<?=Helper::asset('js/main.js')?>"></script>
 </body>
 </html>

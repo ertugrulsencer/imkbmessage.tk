@@ -21,7 +21,7 @@
       <ul>
         <?php foreach ($users as $user): ?>
           <li>
-            <a href="javascript:void(0);">
+            <a class="user" data-user-name="<?=$user['user_name']?>" data-user-id="<?=$user['user_id']?>" href="javascript:void(0);">
               <i class="fas fa-user-circle me-3"></i>
               <span><?=$user['user_name']?></span>
             </a>
@@ -47,64 +47,9 @@
           </a>
         </div>
       </header>
-      <ul class="messages">
-        <div class="message your">
-          Mesaj içeriği alanı falan filan
-        </div>
-        <div class="message">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, facilis.
-        </div>
-        <div class="message your">
-          Lorem ipsum dolor sit.
-        </div>
-        <div class="message">
-          Lorem, ipsum dolor.
-        </div>
-        <div class="message your">
-          Mesaj içeriği alanı falan filan
-        </div>
-        <div class="message your">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, facilis.
-        </div>
-        <div class="message your">
-          Lorem ipsum dolor sit.
-        </div>
-        <div class="message">
-          Lorem, ipsum dolor.
-        </div>
-        <div class="message">
-          Lorem, ipsum dolor.
-        </div>
-        <div class="message your">
-          Mesaj içeriği alanı falan filan
-        </div>
-        <div class="message">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, facilis.
-        </div>
-        <div class="message your">
-          Lorem ipsum dolor sit.
-        </div>
-        <div class="message">
-          Lorem, ipsum dolor.
-        </div>
-        <div class="message your">
-          Mesaj içeriği alanı falan filan
-        </div>
-        <div class="message your">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, facilis.
-        </div>
-        <div class="message your">
-          Lorem ipsum dolor sit.
-        </div>
-        <div class="message">
-          Lorem, ipsum dolor.
-        </div>
-        <div class="message">
-          Lorem, ipsum dolor.
-        </div>
-      </ul>
-      <form onsubmit="return false" class="message-form d-flex align-items-center justify-content-between">
-        <input class="form-control" type="text" placeholder="Mesajınız" id="messageText" required />
+      <ul id="messages" class="messages"></ul>
+      <form onsubmit="return false" id="messageForm" class="message-form d-flex align-items-center justify-content-between">
+        <input class="form-control" type="text" id="messageFormContent" placeholder="Mesajınız" id="messageText" required />
         <button class="btn btn-primary ms-2" type="submit">
           <i class="fas fa-angle-right"></i>
         </button>
@@ -112,6 +57,6 @@
     </section>
   </main>
   <?php include_once 'static/footer.php'?>
-  <script src="<?=Helper::asset('js/main.js')?>"></script>
+  <script type="module" src="<?=Helper::asset('js/main.js')?>"></script>
 </body>
 </html>
